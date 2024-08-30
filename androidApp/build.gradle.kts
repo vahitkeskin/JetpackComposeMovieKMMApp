@@ -43,4 +43,14 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+    val koinComposeVersion = "3.4.1"
+    val coilVersion = "2.2.2"
+    val accompanistVersion = "0.28.0"
+    val navVersion = "2.5.3"
+
+    implementation("io.insert-koin:koin-androidx-compose:$koinComposeVersion")
+    implementation("io.coil-kt:coil-compose:$coilVersion")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
+    implementation("androidx.navigation:navigation-compose:$navVersion")
 }

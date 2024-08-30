@@ -53,4 +53,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:$coilVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
     implementation("androidx.navigation:navigation-compose:$navVersion")
+
+    implementation("androidx.compose.material:material:1.6.8")
 }

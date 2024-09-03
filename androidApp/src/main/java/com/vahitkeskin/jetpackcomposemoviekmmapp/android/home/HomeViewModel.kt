@@ -8,8 +8,7 @@ import com.vahitkeskin.jetpackcomposemoviekmmapp.domain.usecase.GetMoviesUseCase
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    val getMoviesUseCase: GetMoviesUseCase,
-    val getMovieUseCase: GetMovieUseCase
+    val getMoviesUseCase: GetMoviesUseCase
 ) : ViewModel() {
 
     var uiState by mutableStateOf(HomeScreenState())

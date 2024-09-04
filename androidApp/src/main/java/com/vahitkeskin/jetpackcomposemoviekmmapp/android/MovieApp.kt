@@ -19,9 +19,7 @@ import com.vahitkeskin.jetpackcomposemoviekmmapp.android.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun MovieApp(
-    modifier: Modifier = Modifier
-) {
+fun MovieApp() {
     val scaffoldState = rememberScaffoldState()
     val navController = rememberNavController()
 
@@ -33,7 +31,7 @@ fun MovieApp(
         scaffoldState = scaffoldState,
         topBar = {
             MovieAppBar(
-                canNavigateBack = navController.currentBackStackEntry != null, //Arkatarafı beklet
+                canNavigateBack = navController.previousBackStackEntry != null, //Arkatarafı beklet
                 currentScreen = currentScreen
             ) {
                 navController.navigateUp()

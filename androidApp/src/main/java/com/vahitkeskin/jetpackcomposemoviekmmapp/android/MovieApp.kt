@@ -14,9 +14,12 @@ import com.vahitkeskin.jetpackcomposemoviekmmapp.android.common.Detail
 import com.vahitkeskin.jetpackcomposemoviekmmapp.android.common.Home
 import com.vahitkeskin.jetpackcomposemoviekmmapp.android.common.MovieAppBar
 import com.vahitkeskin.jetpackcomposemoviekmmapp.android.common.movieDestination
+import com.vahitkeskin.jetpackcomposemoviekmmapp.android.detail.DetailScreen
+import com.vahitkeskin.jetpackcomposemoviekmmapp.android.detail.DetailViewModel
 import com.vahitkeskin.jetpackcomposemoviekmmapp.android.home.HomeScreen
 import com.vahitkeskin.jetpackcomposemoviekmmapp.android.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun MovieApp() {
@@ -56,7 +59,12 @@ fun MovieApp() {
 
             composable(Detail.routeWithArgs, arguments = Detail.arguments) {
                 val movieId = it.arguments?.getInt("movieId") ?: 0
-                //DetailScreen(movieId = movieId)
+                val detailViewModel: DetailViewModel = koinViewModel(
+                    parameters = {
+                        parametersOf(movieId)
+                    }
+                )
+                DetailScreen(uiState = detailViewModel.uiState)
             }
         }
     }

@@ -15,6 +15,10 @@ class DetailViewModel(
 
     var uiState by mutableStateOf(DetailScreenState())
 
+    init {
+        loadMovie(movieId = movieId)
+    }
+
     private fun loadMovie(movieId: Int) {
         viewModelScope.launch {
             uiState = uiState.copy(loading = true)
